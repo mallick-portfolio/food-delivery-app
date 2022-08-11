@@ -1,5 +1,10 @@
 import React from "react";
-import { Banner, Category, Serve } from "../../components/index.js";
+import {
+  Banner,
+  Category,
+  PopularFood,
+  Serve,
+} from "../../components/index.js";
 
 const Home = () => {
   return (
@@ -7,6 +12,7 @@ const Home = () => {
       <Banner />
       <Category />
       <Serve />
+      <PopularFood />
     </div>
   );
 };
