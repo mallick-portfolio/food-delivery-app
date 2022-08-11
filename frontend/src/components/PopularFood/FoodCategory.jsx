@@ -1,10 +1,12 @@
 import React from "react";
 import { useState } from "react";
+import products from "../../assets/fakeData/products.js";
 import pic1 from "../../assets/pic1.png";
 import pic2 from "../../assets/pic2.png";
 import pic3 from "../../assets/pic3.png";
+import ProductCard from "./ProductCard.jsx";
 const FoodCategory = () => {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(1);
   return (
     <div className="container py-12">
       <h1 className="text-4xl text-center font-bold text-primary mb-8">
@@ -25,6 +27,11 @@ const FoodCategory = () => {
             </li>
           ))}
         </ul>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-12">
+        {products.map((product) => (
+          <ProductCard product={product} />
+        ))}
       </div>
     </div>
   );
