@@ -1,5 +1,5 @@
 import React from "react";
-import { Header } from "./components/index.js";
+import { Footer, Header } from "./components/index.js";
 import Router from "./Router/Router.jsx";
 
 const App = () => {
@@ -7,6 +7,7 @@ const App = () => {
     <div>
       <Header />
       <Router />
+      <Footer />
     </div>
   );
 };
