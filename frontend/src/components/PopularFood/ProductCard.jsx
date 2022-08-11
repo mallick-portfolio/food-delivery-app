@@ -15,7 +15,7 @@ const ProductCard = ({ product }) => {
         <p className="font-semibold text-lg text-secondary">
           ${product?.price}
         </p>
-        <button className="bg-secondary text-white px-2 py-1 rounded-md">
+        <button className="bg-secondary text-base text-white px-2 py-1 rounded-md">
           Add to Cart
         </button>
       </div>

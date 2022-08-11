@@ -12,8 +12,8 @@ const FoodCategory = () => {
       <h1 className="text-4xl text-center font-bold text-primary mb-8">
         Popular Foods
       </h1>
-      <div className="bg-[#df2020] py-8 rounded-md">
-        <ul className="flex items-center justify-center gap-8">
+      <div className="bg-[#df2020] py-2 sm:py-8 rounded-md">
+        <ul className="flex items-center justify-center gap-2 sm:gap-8">
           {items.map((item) => (
             <li
               onClick={() => setActive(item.id)}
@@ -28,7 +28,7 @@ const FoodCategory = () => {
           ))}
         </ul>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-12">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-12">
         {products.map((product) => (
           <ProductCard product={product} />
         ))}
