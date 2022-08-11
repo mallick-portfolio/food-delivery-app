@@ -9,18 +9,16 @@ const FoodCategory = () => {
   const [active, setActive] = useState(1);
   return (
     <div className="container py-12">
-      <h1 className="text-4xl text-center font-bold text-primary mb-8">
-        Popular Foods
-      </h1>
+      <h1 className="foods-title">Popular Foods</h1>
       <div className="bg-[#df2020] py-2 sm:py-8 rounded-md">
-        <ul className="flex items-center justify-center gap-2 sm:gap-8">
+        <ul className="food-category">
           {items.map((item) => (
             <li
               onClick={() => setActive(item.id)}
               key={item.id}
               className={`${
                 active === item.id ? "bg-white text-secondary" : "text-white"
-              } px-4 py-2 rounded-md cursor-pointer flex items-center gap-2`}
+              } category-item`}
             >
               {item.image && <img className="w-6" src={item.image} alt="" />}
               <span>{item.title}</span>
@@ -28,7 +26,7 @@ const FoodCategory = () => {
           ))}
         </ul>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-12">
+      <div className="foods-grid">
         {products.map((product) => (
           <ProductCard product={product} />
         ))}

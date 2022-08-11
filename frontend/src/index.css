@@ -64,7 +64,7 @@ code {
     @apply flex items-center sm:justify-start justify-center mt-8 gap-2 sm:gap-8;
   }
   .trust-flex {
-    @apply flex items-center gap-1 sm:gap-3
+    @apply flex items-center gap-1 sm:gap-3;
   }
   .trust-icon {
     @apply p-1 rounded-full bg-secondary text-white;
@@ -73,30 +73,54 @@ code {
     @apply text-sm sm:text-base text-primary font-semibold;
   }
   .category-container {
-    @apply container py-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-8
+    @apply container py-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-8;
   }
   .category-flex {
-    @apply flex items-center px-2 sm:pl-5 cursor-pointer gap-2 sm:gap-5 bg-[#fde4e4] rounded-md py-3 sm:py-4 lg:py-8
+    @apply flex items-center px-2 sm:pl-5 cursor-pointer gap-2 sm:gap-5 bg-[#fde4e4] rounded-md py-3 sm:py-4 lg:py-8;
   }
   .category-title {
-    @apply text-sm sm:text-base md:text-lg lg:text-xl font-semibold
+    @apply text-sm sm:text-base md:text-lg lg:text-xl font-semibold;
   }
   .serve-subtitle {
-    @apply text-secondary text-lg lg:text-xl font-semibold
+    @apply text-secondary text-lg lg:text-xl font-semibold;
   }
   .serve-title {
-    @apply text-primary font-semibold text-2xl lg:text-4xl my-4 sm:my-6
+    @apply text-primary font-semibold text-2xl lg:text-4xl my-4 sm:my-6;
   }
   .serve-des {
-    @apply text-sm sm:text-base text-natural
+    @apply text-sm sm:text-base text-natural;
   }
   .serve-grid {
-    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8;
   }
   .single-serve {
-    @apply text-center p-8 bg-white shadow-xl rounded-md
+    @apply text-center p-8 bg-white shadow-xl rounded-md;
   }
   .single-serve-title {
-    @apply text-lg sm:text-xl text-primary font-bold my-2 sm:my-4
+    @apply text-lg sm:text-xl text-primary font-bold my-2 sm:my-4;
+  }
+  .foods-title {
+    @apply text-4xl text-center font-bold text-primary mb-8;
+  }
+  .food-category {
+    @apply flex items-center justify-center gap-2 sm:gap-8;
+  }
+  .category-item {
+    @apply px-4 py-2 rounded-md cursor-pointer flex items-center gap-2;
+  }
+  .foods-grid {
+    @apply grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-12;
+  }
+  .foods-product-item {
+    @apply bg-white shadow-md px-6 py-4 rounded-md;
+  }
+  .single-product-img {
+    @apply w-1/2 cursor-pointer mx-auto scale-100 hover:scale-125 duration-500;
+  }
+  .single-product-title {
+    @apply text-center text-lg font-semibold text-primary my-4
+  }
+  .add-to-cart-btn {
+    @apply bg-secondary text-base text-white px-2 py-1 rounded-md
   }
 }
