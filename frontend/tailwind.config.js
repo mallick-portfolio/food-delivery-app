@@ -13,6 +13,11 @@ module.exports = {
           "2xl": "6rem",
         },
       },
+      colors: {
+        primary: "#212245",
+        secondary: "#df2020",
+        natural: "#777",
+      },
     },
   },
   plugins: [],

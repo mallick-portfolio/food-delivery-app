@@ -16,3 +16,60 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+@layer utilities {
+  .header {
+    @apply py-1 sm:py-2 bg-white shadow-lg;
+  }
+  .header-container {
+    @apply container flex justify-between items-center;
+  }
+  .logo-area {
+    @apply flex flex-col items-center;
+  }
+  .desktop-menu {
+    @apply flex justify-between items-center gap-6;
+  }
+  .list-item {
+    @apply font-semibold text-base cursor-pointer;
+  }
+  .mobile-menu {
+    @apply block lg:hidden absolute w-1/3 md:w-1/4 mt-auto bg-white shadow-2xl z-30 top-0 bottom-0 transition-all duration-500;
+  }
+  .mobile-ul {
+    @apply flex items-center mt-8 gap-4 flex-col;
+  }
+  .banner-container {
+    @apply container flex flex-col sm:flex-row items-center my-24;
+  }
+  .banner-left {
+    @apply sm:w-1/2 text-center sm:text-left;
+  }
+  .banner-subtitle {
+    @apply text-base sm:text-lg lg:text-xl text-primary font-semibold;
+  }
+  .banner-title {
+    @apply text-2xl sm:text-3xl lg:text-4xl text-primary font-semibold my-3 lg:my-4;
+  }
+  .banner-des {
+    @apply text-natural text-xs sm:text-sm lg:text-base leading-6;
+  }
+  .order-btn {
+    @apply bg-secondary hover:bg-primary duration-500 text-white rounded-md px-2 lg:px-4 py-1 sm:py-1 lg:py-2 sm:text-base text-sm font-semibold;
+  }
+  .foods-btn {
+    @apply border border-secondary hover:border-primary hover:text-primary duration-500 text-secondary  rounded-md px-2 lg:px-4 py-1 sm:py-1 lg:py-2 sm:text-base text-sm font-semibold;
+  }
+  .banner-trust {
+    @apply flex items-center sm:justify-start justify-center mt-8 gap-2 sm:gap-8;
+  }
+  .trust-flex {
+    @apply flex items-center gap-1 sm:gap-3
+  }
+  .trust-icon {
+    @apply p-1 rounded-full bg-secondary text-white;
+  }
+  .trust-content {
+    @apply text-sm sm:text-base text-primary font-semibold;
+  }
+}

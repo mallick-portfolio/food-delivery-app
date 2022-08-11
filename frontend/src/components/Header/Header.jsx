@@ -6,25 +6,33 @@ import { useState } from "react";
 const Header = () => {
   const [show, setShow] = useState(true);
   return (
-    <header className="py-1 sm:py-2 bg-white shadow-lg">
-      <div className="container flex justify-between items-center">
-        <div className="flex flex-col items-center">
+    <header className="header">
+      <div className="header-container">
+        <div className="logo-area">
           <img className="w-12" src={logo} alt="" />
           <h4 className="text-sm font-bold">Tasty Treat</h4>
         </div>
 
         {/* Desktop Menu */}
         <div className="hidden lg:block">
-          <ul className="flex justify-between items-center gap-6">{menus}</ul>
+          <ul className="desktop-menu">
+            {menus.map((item, i) => (
+              <li key={i} className="list-item">
+                {item.display}
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* Mobile Menu */}
-        <div
-          className={`block lg:hidden absolute w-1/3 md:w-1/4 mt-auto bg-white shadow-2xl z-30 top-0 bottom-0 transition-all duration-500 ${
-            show ? "-left-64" : "left-0"
-          }`}
-        >
-          <ul className="flex items-center mt-8 gap-4 flex-col">{menus}</ul>
+        <div className={`mobile-menu ${show ? "-left-64" : "left-0"}`}>
+          <ul className="mobile-ul">
+            {menus.map((item, i) => (
+              <li key={i} className="list-item">
+                {item.display}
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div>
@@ -80,13 +88,23 @@ const Header = () => {
   );
 };
 
-const menus = (
-  <>
-    <li className="font-semibold text-base cursor-pointer">Home</li>
-    <li className="font-semibold text-base cursor-pointer">Foods</li>
-    <li className="font-semibold text-base cursor-pointer">Cart</li>
-    <li className="font-semibold text-base cursor-pointer">Contact</li>
-  </>
-);
+const menus = [
+  {
+    display: "Home",
+    path: "/home",
+  },
+  {
+    display: "Foods",
+    path: "/foods",
+  },
+  {
+    display: "Cart",
+    path: "/cart",
+  },
+  {
+    display: "Contact",
+    path: "/contact",
+  },
+];
 
 export default Header;
