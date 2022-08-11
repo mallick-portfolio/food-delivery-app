@@ -4,11 +4,11 @@ import ser2 from "../../assets/ser2.png";
 import ser3 from "../../assets/ser3.png";
 const SingleService = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+    <div className="serve-grid">
       {services.map((service) => (
-        <div key={service.id} className="text-center p-8 bg-white shadow-xl rounded-md">
+        <div key={service.id} className="single-serve">
           <img className="w-1/4 mx-auto" src={service.image} alt="" />
-          <h4 className="text-lg sm:text-xl text-primary font-bold my-2 sm:my-4">{service.title}</h4>
+          <h4 className="single-serve-title">{service.title}</h4>
           <p className="text-sm sm:text-base">{service.des}</p>
         </div>
       ))}

@@ -81,4 +81,22 @@ code {
   .category-title {
     @apply text-sm sm:text-base md:text-lg lg:text-xl font-semibold
   }
+  .serve-subtitle {
+    @apply text-secondary text-lg lg:text-xl font-semibold
+  }
+  .serve-title {
+    @apply text-primary font-semibold text-2xl lg:text-4xl my-4 sm:my-6
+  }
+  .serve-des {
+    @apply text-sm sm:text-base text-natural
+  }
+  .serve-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8
+  }
+  .single-serve {
+    @apply text-center p-8 bg-white shadow-xl rounded-md
+  }
+  .single-serve-title {
+    @apply text-lg sm:text-xl text-primary font-bold my-2 sm:my-4
+  }
 }
