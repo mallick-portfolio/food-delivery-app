@@ -5,14 +5,11 @@ import cat3 from "../../assets/cat3.png";
 import cat4 from "../../assets/cat4.png";
 const Category = () => {
   return (
-    <div className="container py-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-8">
+    <div className="category-container">
       {category.map((cat) => (
-        <div
-          key={cat.id}
-          className="flex items-center px-2 sm:pl-5 cursor-pointer gap-2 sm:gap-5 bg-[#fde4e4] rounded-md py-3 sm:py-4 lg:py-8"
-        >
+        <div key={cat.id} className="category-flex">
           <img className="w-1/3 sm:w-auto" src={cat.image} alt="" />
-          <h4 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold">{cat.title}</h4>
+          <h4 className="category-title">{cat.title}</h4>
         </div>
       ))}
     </div>

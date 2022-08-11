@@ -72,4 +72,13 @@ code {
   .trust-content {
     @apply text-sm sm:text-base text-primary font-semibold;
   }
+  .category-container {
+    @apply container py-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-8
+  }
+  .category-flex {
+    @apply flex items-center px-2 sm:pl-5 cursor-pointer gap-2 sm:gap-5 bg-[#fde4e4] rounded-md py-3 sm:py-4 lg:py-8
+  }
+  .category-title {
+    @apply text-sm sm:text-base md:text-lg lg:text-xl font-semibold
+  }
 }
