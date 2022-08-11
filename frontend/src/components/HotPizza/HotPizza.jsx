@@ -9,6 +9,7 @@ const HotPizza = () => {
       <div className="foods-grid">
         {products
           .filter((cat) => cat.category === "Pizza")
+          .slice(0, 4)
           .map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

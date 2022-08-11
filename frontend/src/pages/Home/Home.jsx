@@ -6,6 +6,7 @@ import {
   PopularFood,
   Serve,
   Tasty,
+  Testimonial,
 } from "../../components/index.js";
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
       <PopularFood />
       <Tasty />
       <HotPizza />
+      <Testimonial />
     </div>
   );
 };
