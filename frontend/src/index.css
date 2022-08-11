@@ -118,9 +118,21 @@ code {
     @apply w-1/2 cursor-pointer mx-auto scale-100 hover:scale-125 duration-500;
   }
   .single-product-title {
-    @apply text-center text-lg font-semibold text-primary my-4
+    @apply text-center text-lg font-semibold text-primary my-4;
   }
   .add-to-cart-btn {
-    @apply bg-secondary text-base text-white px-2 py-1 rounded-md
+    @apply bg-secondary text-base text-white px-2 py-1 rounded-md;
+  }
+  .tasty-container {
+    @apply container flex flex-col sm:flex-row justify-between items-center gap-4 py-12;
+  }
+  .tasty-title {
+    @apply text-2xl sm:text-3xl lg:text-4xl font-bold text-primary;
+  }
+  .tasty-des {
+    @apply text-sm sm:text-base leading-7 text-natural py-5;
+  }
+  .tasty-flex {
+    @apply flex flex-col justify-start sm:w-1/2 pr-5 sm:pr-0;
   }
 }

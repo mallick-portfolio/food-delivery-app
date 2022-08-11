@@ -2,7 +2,7 @@ import React from "react";
 
 const ProductCard = ({ product }) => {
   return (
-    <div className="foods-product-item" key={product.id}>
+    <div className="foods-product-item">
       <img className="single-product-img" src={product?.images[0]} alt="" />
       <h3 className="single-product-title">{product?.title}</h3>
       <div className="flex justify-between items-center gap-6">

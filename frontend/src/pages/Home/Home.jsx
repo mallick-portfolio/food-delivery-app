@@ -2,8 +2,10 @@ import React from "react";
 import {
   Banner,
   Category,
+  HotPizza,
   PopularFood,
   Serve,
+  Tasty,
 } from "../../components/index.js";
 
 const Home = () => {
@@ -13,6 +15,8 @@ const Home = () => {
       <Category />
       <Serve />
       <PopularFood />
+      <Tasty />
+      <HotPizza />
     </div>
   );
 };
