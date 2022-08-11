@@ -40,7 +40,7 @@ code {
     @apply flex items-center mt-8 gap-4 flex-col;
   }
   .banner-container {
-    @apply container flex flex-col sm:flex-row items-center my-24;
+    @apply container flex flex-col sm:flex-row items-center my-12;
   }
   .banner-left {
     @apply sm:w-1/2 text-center sm:text-left;
