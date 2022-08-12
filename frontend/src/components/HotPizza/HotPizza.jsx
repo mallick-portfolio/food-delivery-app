@@ -13,7 +13,6 @@ const HotPizza = () => {
       <div className="">
         <Swiper
           loop={true}
-          height={10}
           slidesPerView={4}
           spaceBetween={30}
           navigation={{
