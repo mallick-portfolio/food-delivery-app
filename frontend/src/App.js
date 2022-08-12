@@ -4,7 +4,7 @@ import Router from "./Router/Router.jsx";
 
 const App = () => {
   return (
-    <div>
+    <div className="w-full overflow-hidden">
       <Header />
       <Router />
       <Footer />

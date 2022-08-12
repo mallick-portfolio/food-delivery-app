@@ -8,8 +8,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper";
 const Testimonial = () => {
   return (
-    <div className="container py-12 flex justify-between items-center gap-4">
-      <div className="w-1/2">
+    <div className="container py-12 flex flex-col-reverse sm:flex-row justify-between items-center gap-4">
+      <div className="sm:w-1/2 w-full">
         <h3 className="serve-subtitle">Testimonial</h3>
         <h2 className="tasty-title mt-4">
           What our <span className="text-secondary">customers</span> are saying
@@ -41,7 +41,7 @@ const Testimonial = () => {
           ))}
         </Swiper>
       </div>
-      <div className="w-1/2">
+      <div className="sm:w-1/2">
         <img src={network} alt="" />
       </div>
     </div>
