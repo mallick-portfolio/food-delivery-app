@@ -149,4 +149,22 @@ code {
   .testimonial-container {
     @apply container py-12 flex flex-col-reverse sm:flex-row justify-between items-center gap-4;
   }
+  .footer-container {
+    @apply container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-8;
+  }
+  .footer-headline {
+    @apply text-xl text-primary font-semibold;
+  }
+  .footer-col-para {
+    @apply my-3 text-primary;
+  }
+  .footer-input {
+    @apply w-full border border-primary rounded-md h-12 pl-4 focus:outline-none;
+  }
+  .input-plane {
+    @apply absolute bottom-0 bg-primary py-[14px] px-5 rounded-md right-0;
+  }
+  .footer-col-subtitle {
+    @apply font-semibold text-base text-primary;
+  }
 }
