@@ -117,7 +117,7 @@ code {
     @apply grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 mt-12;
   }
   .foods-product-item {
-    @apply bg-white shadow-md px-4 py-2 sm:px-6 sm:py-4 rounded-md;
+    @apply bg-white shadow-md px-4 py-2 sm:px-6 sm:py-4 rounded-md  col-span-1 flex flex-col;
   }
   .single-product-img {
     @apply sm:w-1/2 w-2/3 cursor-pointer mx-auto scale-100 hover:scale-125 duration-500;
