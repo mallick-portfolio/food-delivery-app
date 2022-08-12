@@ -18,8 +18,13 @@ code {
 }
 
 @layer utilities {
+  /* common css */
+
+  .header-sticky {
+    @apply sticky top-0 left-0 shadow-xl bg-white z-50 transition-all duration-1000;
+  }
   .header {
-    @apply py-1 sm:py-2 bg-white shadow-lg;
+    @apply py-1 sm:py-2;
   }
   .header-container {
     @apply container flex justify-between items-center;

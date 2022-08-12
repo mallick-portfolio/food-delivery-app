@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import logo from "../../assets/logo.png";
 import { RiShoppingBasketLine } from "react-icons/ri";
 import { AiOutlineUser } from "react-icons/ai";
 import { useState } from "react";
 const Header = () => {
+  const headerRef = useRef(null);
   const [show, setShow] = useState(true);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (
+        document.body.scrollTop > 60 ||
+        document.documentElement.scrollTop > 60
+      ) {
+        headerRef.current.classList.add("header-sticky");
+      } else {
+        headerRef.current.classList.remove("header-sticky");
+      }
+    });
+
+    return () => window.removeEventListener("scroll", headerRef);
+  }, []);
   return (
-    <header className="header">
+    <header ref={headerRef} className="header">
       <div className="header-container">
         <div className="logo-area">
           <img className="w-12" src={logo} alt="" />
