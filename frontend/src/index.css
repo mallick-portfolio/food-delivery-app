@@ -114,19 +114,25 @@ code {
     @apply px-4 py-2 rounded-md cursor-pointer flex items-center gap-2;
   }
   .foods-grid {
-    @apply grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-12;
+    @apply grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 mt-12;
   }
   .foods-product-item {
-    @apply bg-white shadow-md px-6 py-4 rounded-md;
+    @apply bg-white shadow-md px-4 py-2 sm:px-6 sm:py-4 rounded-md;
   }
   .single-product-img {
-    @apply w-1/2 cursor-pointer mx-auto scale-100 hover:scale-125 duration-500;
+    @apply sm:w-1/2 w-2/3 cursor-pointer mx-auto scale-100 hover:scale-125 duration-500;
   }
   .single-product-title {
-    @apply text-center text-lg font-semibold text-primary my-4;
+    @apply text-center text-sm sm:text-lg font-semibold text-primary my-4;
+  }
+  .price-btn-flex {
+    @apply flex flex-col sm:flex-row justify-between items-center gap-1 sm:gap-6;
+  }
+  .card-price {
+    @apply font-semibold text-lg text-secondary;
   }
   .add-to-cart-btn {
-    @apply bg-secondary text-base text-white px-2 py-1 rounded-md;
+    @apply bg-secondary text-xs sm:text-base text-white px-2 py-1 rounded-md;
   }
   .tasty-container {
     @apply container flex flex-col sm:flex-row justify-between items-center gap-4 py-12;
@@ -139,5 +145,8 @@ code {
   }
   .tasty-flex {
     @apply flex flex-col justify-start sm:w-1/2 pr-5 sm:pr-0;
+  }
+  .testimonial-container {
+    @apply container py-12 flex flex-col-reverse sm:flex-row justify-between items-center gap-4;
   }
 }

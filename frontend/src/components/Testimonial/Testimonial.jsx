@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper";
 const Testimonial = () => {
   return (
-    <div className="container py-12 flex flex-col-reverse sm:flex-row justify-between items-center gap-4">
+    <div className="testimonial-container">
       <div className="sm:w-1/2 w-full">
         <h3 className="serve-subtitle">Testimonial</h3>
         <h2 className="tasty-title mt-4">
