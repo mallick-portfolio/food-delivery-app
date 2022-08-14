@@ -17,7 +17,7 @@ code {
     monospace;
 }
 .food-banner {
-  background-image: url("https://i.ibb.co/vhWx6PY/foodbanner.jpg");
+  background-image: url("https://i.ibb.co/BnXKQmc/foodbanner-1.jpg");
   background-size: cover;
   background-attachment: fixed;
   padding: 120px 0;
@@ -150,13 +150,13 @@ code {
     @apply grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 mt-12;
   }
   .foods-product-item {
-    @apply bg-white shadow-md px-4 py-2 sm:px-6 sm:py-4 rounded-md  col-span-1 flex flex-col;
+    @apply bg-white shadow-md px-2 py-2 sm:px-4 lg:px-6 sm:py-4 rounded-md  col-span-1 flex flex-col;
   }
   .single-product-img {
     @apply sm:w-1/2 w-2/3 cursor-pointer mx-auto scale-100 hover:scale-125 duration-500;
   }
   .single-product-title {
-    @apply text-center text-sm sm:text-lg font-semibold text-primary my-4;
+    @apply text-center text-sm md:text-base lg:text-lg font-semibold text-primary my-4;
   }
   .price-btn-flex {
     @apply flex flex-col sm:flex-row justify-between items-center gap-1 sm:gap-6;
@@ -231,25 +231,24 @@ code {
     @apply cursor-pointer w-full sm:w-auto px-4 sm:px-8 py-2 lg:py-4 bg-[#3b5998] rounded-md flex gap-2 items-center;
   }
   .social-google {
-    @apply cursor-pointer w-full sm:w-auto px-4 sm:px-8 py-2 lg:py-4 shadow-3xl rounded-md flex gap-2 items-center
+    @apply cursor-pointer w-full sm:w-auto px-4 sm:px-8 py-2 lg:py-4 shadow-3xl rounded-md flex gap-2 items-center;
   }
   .facebook-title {
-    @apply text-lg sm:text-xl font-semibold text-white
+    @apply text-lg sm:text-xl font-semibold text-white;
   }
   .google-title {
-    @apply text-lg sm:text-xl font-semibold text-[#555555]
+    @apply text-lg sm:text-xl font-semibold text-[#555555];
   }
   .form-submit {
-    @apply w-full bg-primary border hover:border-primary hover:bg-white hover:text-primary transition-all duration-500 rounded-md  py-2 lg:py-3 text-white cursor-pointer text-lg sm:text-xl
+    @apply w-full bg-primary border hover:border-primary hover:bg-white hover:text-primary transition-all duration-500 rounded-md  py-2 lg:py-3 text-white cursor-pointer text-lg sm:text-xl;
   }
 }
 
-
 @layer components {
   .form-label {
-    @apply last:text-sm lg:text-lg font-semibold text-primary
+    @apply last:text-sm lg:text-lg font-semibold text-primary;
   }
   .form-input {
-    @apply w-full shadow-3xl rounded-md h-10 lg:h-12 focus:outline-none focus:border-2 focus:border-primary pl-4
+    @apply w-full shadow-3xl rounded-md h-10 lg:h-12 focus:outline-none focus:border-2 focus:border-primary pl-4;
   }
 }

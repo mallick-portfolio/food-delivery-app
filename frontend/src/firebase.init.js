@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAar6_js-y3oUO_hbV2ZSYQVkv241dnsP0",
-  authDomain: "food-deleviry-app.firebaseapp.com",
-  projectId: "food-deleviry-app",
-  storageBucket: "food-deleviry-app.appspot.com",
-  messagingSenderId: "376308438017",
-  appId: "1:376308438017:web:3842aa0b375c4670471c00",
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase

@@ -5,25 +5,11 @@ import { AiOutlineUser } from "react-icons/ai";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 const Header = () => {
-  const headerRef = useRef(null);
+ 
   const [show, setShow] = useState(true);
 
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (
-        document.body.scrollTop > 60 ||
-        document.documentElement.scrollTop > 60
-      ) {
-        headerRef.current.classList.add("header-sticky");
-      } else {
-        headerRef.current.classList.remove("header-sticky");
-      }
-    });
-
-    return () => window.removeEventListener("scroll", headerRef);
-  }, []);
   return (
-    <header ref={headerRef} className="header">
+    <header className="header">
       <div className="header-container">
         <div className="logo-area">
           <img className="w-12" src={logo} alt="" />

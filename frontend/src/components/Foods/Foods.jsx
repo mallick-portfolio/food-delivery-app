@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import allProducts from "../../assets/fakeData/products.js";
 import ProductCard from "../PopularFood/ProductCard.jsx";
 const Foods = ({ search, view }) => {
-  console.log(search);
   const [products, setProducts] = useState(allProducts);
   useEffect(() => {
     const filterProduct = allProducts.filter((product) =>
@@ -16,8 +15,8 @@ const Foods = ({ search, view }) => {
       <div
         className={`grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 mt-12`}
       >
-        {products.map((food) => (
-          <ProductCard key={food.id} product={food} />
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </div>

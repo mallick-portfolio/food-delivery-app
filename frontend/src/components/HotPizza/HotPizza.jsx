@@ -1,7 +1,7 @@
 import React from "react";
 import products from "../../assets/fakeData/products.js";
 import ProductCard from "../PopularFood/ProductCard.jsx";
-import { Navigation } from "swiper";
+import { Autoplay, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
@@ -13,6 +13,7 @@ const HotPizza = () => {
       <div className="">
         <Swiper
           loop={true}
+          autoplay={true}
           slidesPerView={4}
           spaceBetween={30}
           navigation={{
@@ -20,33 +21,32 @@ const HotPizza = () => {
             nextEl: ".next",
           }}
           breakpoints={{
-            // when window width is >= 320px
-            100: {
-              slidesPerView: 1,
-              spaceBetween: 0,
-            },
             320: {
-              slidesPerView: 2,
-              spaceBetween: 20,
+              slidesPerView: 1,
+              spaceBetween: 10,
             },
             480: {
-              slidesPerView: 3,
-              spaceBetween: 20,
+              slidesPerView: 2,
+              spaceBetween: 30,
             },
             640: {
-              slidesPerView: 3,
-              spaceBetween: 20,
+              slidesPerView: 2,
+              spaceBetween: 30,
             },
             769: {
-              slidesPerView: 4,
+              slidesPerView: 2,
               spaceBetween: 30,
             },
-            900: {
-              slidesPerView: 4,
+            1000: {
+              slidesPerView: 3,
               spaceBetween: 30,
+            },
+            1100: {
+              slidesPerView: 3,
+              spaceBetween: 40,
             },
           }}
-          modules={[Navigation]}
+          modules={[Navigation, Autoplay]}
           className="mySwiper relative"
         >
           {products
