@@ -63,6 +63,11 @@ const Header = () => {
                 <AiOutlineUser className="right-navbar-item" />
               </Link>
             </li>
+            <li>
+              <Link to={"/login"}>
+                <AiOutlineUser className="right-navbar-item" />
+              </Link>
+            </li>
             <li className="block lg:hidden">
               <button onClick={() => setShow(!show)}>
                 {show ? (

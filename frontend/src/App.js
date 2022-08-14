@@ -7,9 +7,13 @@ const App = () => {
   const location = useLocation();
   return (
     <div className="w-full overflow-hidden">
-      {location.pathname !== "/register" && <Header />}
+      {location.pathname !== "/register" && location.pathname !== "/login" && (
+        <Header />
+      )}
       <Router />
-      {location.pathname !== "/register" && <Footer />}
+      {location.pathname !== "/register" && location.pathname !== "/login" && (
+        <Footer />
+      )}
     </div>
   );
 };
