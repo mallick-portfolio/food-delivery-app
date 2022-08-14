@@ -16,8 +16,14 @@ const FilterFood = ({ setSearch }) => {
         <AiOutlineSearch className="absolute right-2 top-2 text-primary text-2xl cursor-pointer" />
       </div>
       <div className="flex items-center gap-8">
-        <BsFillGrid3X3GapFill className="text-2xl text-primary cursor-pointer" />
-        <FaList className="text-2xl text-primary cursor-pointer" />
+        <BsFillGrid3X3GapFill
+          onClick={() => setSearch(true)}
+          className="text-2xl text-primary cursor-pointer"
+        />
+        <FaList
+          onClick={() => setSearch(false)}
+          className="text-2xl text-primary cursor-pointer"
+        />
       </div>
     </div>
   );
