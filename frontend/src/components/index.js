@@ -7,3 +7,5 @@ export { default as Tasty } from "./Tasty/Tasty.jsx";
 export { default as HotPizza } from "./HotPizza/HotPizza.jsx";
 export { default as Testimonial } from "./Testimonial/Testimonial.jsx";
 export { default as Footer } from "./Footer/Footer.jsx";
+
+export { default as FoodBanner } from "./FoodBanner/FoodBanner.jsx";

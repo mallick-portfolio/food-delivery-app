@@ -16,15 +16,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
+.food-banner {
+  background-image: url("https://i.ibb.co/vhWx6PY/foodbanner.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 120px 0;
+  position: relative;
+}
+.food-banner::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(85, 85, 84, 0.6);
+  z-index: 0;
+}
 @layer utilities {
   /* common css */
 
-  .header-sticky {
-    @apply sticky top-0 left-0 shadow-xl bg-white z-50 transition-all duration-1000;
-  }
   .header {
     @apply py-1 sm:py-2;
+  }
+  .header-sticky {
+    @apply sticky top-0 left-0 shadow-xl bg-red-500 z-50 transition-all duration-1000;
   }
   .header-container {
     @apply container flex justify-between items-center;
@@ -45,13 +61,13 @@ code {
     @apply flex items-center mt-8 gap-4 flex-col;
   }
   .right-navbar {
-    @apply flex items-center gap-6
+    @apply flex items-center gap-6;
   }
   .cart-item {
-    @apply absolute -top-2 w-5 text-white h-5 text-center -right-2 bg-red-500 rounded-full
+    @apply absolute -top-2 w-5 text-white h-5 text-center -right-2 bg-red-500 rounded-full;
   }
   .right-navbar-item {
-    @apply font-bold text-2xl cursor-pointer
+    @apply font-bold text-2xl cursor-pointer;
   }
   .banner-container {
     @apply container flex flex-col sm:flex-row items-center my-12;

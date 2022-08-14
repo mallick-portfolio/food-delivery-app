@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import { FoodBanner } from "../../components/index.js";
 
 const AllFoods = () => {
   return (
     <div>
-      <h1>hello world</h1>
+      <FoodBanner />
     </div>
-  )
-}
+  );
+};
 
-export default AllFoods
+export default AllFoods;
