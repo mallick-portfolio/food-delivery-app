@@ -3,6 +3,7 @@ import logo from "../../assets/logo.png";
 import { RiShoppingBasketLine } from "react-icons/ri";
 import { AiOutlineUser } from "react-icons/ai";
 import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 const Header = () => {
   const headerRef = useRef(null);
   const [show, setShow] = useState(true);
@@ -34,7 +35,7 @@ const Header = () => {
           <ul className="desktop-menu">
             {menus.map((item, i) => (
               <li key={i} className="list-item">
-                {item.display}
+                <NavLink to={item.path}>{item.display}</NavLink>
               </li>
             ))}
           </ul>
@@ -45,22 +46,22 @@ const Header = () => {
           <ul className="mobile-ul">
             {menus.map((item, i) => (
               <li key={i} className="list-item">
-                {item.display}
+                <NavLink to={item.path}>{item.display}</NavLink>
               </li>
             ))}
           </ul>
         </div>
 
         <div>
-          <ul className="flex items-center gap-6">
+          <ul className="right-navbar">
             <li className="relative">
-              <RiShoppingBasketLine className="font-bold text-2xl" />
-              <span className="absolute -top-2 w-5 text-white h-5 text-center -right-2 bg-red-500 rounded-full">
-                0
-              </span>
+              <RiShoppingBasketLine className="right-navbar-item" />
+              <span className="cart-item">0</span>
             </li>
             <li>
-              <AiOutlineUser className="font-bold text-2xl" />
+              <Link to={"/register"}>
+                <AiOutlineUser className="right-navbar-item" />
+              </Link>
             </li>
             <li className="block lg:hidden">
               <button onClick={() => setShow(!show)}>
@@ -111,7 +112,7 @@ const menus = [
   },
   {
     display: "Foods",
-    path: "/foods",
+    path: "/all-foods",
   },
   {
     display: "Cart",

@@ -1,13 +1,15 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import { Footer, Header } from "./components/index.js";
 import Router from "./Router/Router.jsx";
 
 const App = () => {
+  const location = useLocation();
   return (
     <div className="w-full overflow-hidden">
-      <Header />
+      {location.pathname !== "/register" && <Header />}
       <Router />
-      <Footer />
+      {location.pathname !== "/register" && <Footer />}
     </div>
   );
 };

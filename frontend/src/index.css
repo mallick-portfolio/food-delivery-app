@@ -44,6 +44,15 @@ code {
   .mobile-ul {
     @apply flex items-center mt-8 gap-4 flex-col;
   }
+  .right-navbar {
+    @apply flex items-center gap-6
+  }
+  .cart-item {
+    @apply absolute -top-2 w-5 text-white h-5 text-center -right-2 bg-red-500 rounded-full
+  }
+  .right-navbar-item {
+    @apply font-bold text-2xl cursor-pointer
+  }
   .banner-container {
     @apply container flex flex-col sm:flex-row items-center my-12;
   }
