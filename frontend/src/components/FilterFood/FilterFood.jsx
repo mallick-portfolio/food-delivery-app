@@ -5,25 +5,22 @@ import { FaList } from "react-icons/fa";
 
 const FilterFood = ({ setSearch }) => {
   return (
-    <div className="container flex justify-between items-center pt-12">
+    <div className="food-filter-container">
       <div className="w-1/3 relative">
         <input
           onChange={(e) => setSearch(e.target.value)}
-          className="border w-full border-primary rounded-md focus:outline-none pl-4 h-10"
+          className="filter-input"
           type="text"
           placeholder="I'm looking for..."
         />
-        <AiOutlineSearch className="absolute right-2 top-2 text-primary text-2xl cursor-pointer" />
+        <AiOutlineSearch className="filter-search-icon" />
       </div>
       <div className="flex items-center gap-8">
         <BsFillGrid3X3GapFill
           onClick={() => setSearch(true)}
-          className="text-2xl text-primary cursor-pointer"
+          className="filter-view"
         />
-        <FaList
-          onClick={() => setSearch(false)}
-          className="text-2xl text-primary cursor-pointer"
-        />
+        <FaList onClick={() => setSearch(false)} className="filter-view" />
       </div>
     </div>
   );

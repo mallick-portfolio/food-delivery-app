@@ -33,6 +33,14 @@ code {
   background: rgba(85, 85, 84, 0.6);
   z-index: 0;
 }
+.register {
+  background-image: url("https://i.ibb.co/0n0w6kD/register.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 120px 0;
+  position: relative;
+}
+
 @layer utilities {
   /* common css */
 
@@ -191,5 +199,20 @@ code {
   }
   .footer-col-subtitle {
     @apply font-semibold text-base text-primary;
+  }
+  .food-banner-container {
+    @apply container relative z-30 text-3xl font-semibold text-white;
+  }
+  .food-filter-container {
+    @apply container flex justify-between items-center pt-12;
+  }
+  .filter-input {
+    @apply border w-full border-primary rounded-md focus:outline-none pl-4 h-10;
+  }
+  .filter-search-icon {
+    @apply absolute right-2 top-2 text-primary text-2xl cursor-pointer;
+  }
+  .filter-view {
+    @apply text-2xl text-primary cursor-pointer;
   }
 }

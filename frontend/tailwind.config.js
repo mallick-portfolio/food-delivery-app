@@ -18,6 +18,9 @@ module.exports = {
         secondary: "#df2020",
         natural: "#777",
       },
+      boxShadow: {
+        "3xl": "0 1px 5px 0px rgb(0 0 0 / 20%)",
+      },
     },
   },
   plugins: [],
