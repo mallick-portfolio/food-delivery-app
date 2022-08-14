@@ -9,3 +9,5 @@ export { default as Testimonial } from "./Testimonial/Testimonial.jsx";
 export { default as Footer } from "./Footer/Footer.jsx";
 
 export { default as FoodBanner } from "./FoodBanner/FoodBanner.jsx";
+export { default as FilterFood } from "./FilterFood/FilterFood.jsx";
+export { default as Foods } from "./Foods/Foods.jsx";
