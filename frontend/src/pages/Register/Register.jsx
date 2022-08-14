@@ -1,20 +1,30 @@
 import React from "react";
-import { GrFacebook } from "react-icons/gr";
 import { FcGoogle } from "react-icons/fc";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 import {
   useCreateUserWithEmailAndPassword,
+  useSignInWithGithub,
+  useSignInWithGoogle,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
+
 import auth from "../../firebase.init.js";
 import { useEffect } from "react";
+import Loading from "../../components/Loading/Loading.jsx";
+import { AiFillGithub } from "react-icons/ai";
 const Register = () => {
   const navigate = useNavigate();
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+  const [signInWithGoogle, googleUser, googleLoading, googleError] =
+    useSignInWithGoogle(auth);
+  const [signInWithGithub, GitUser, GitLoading, GitError] =
+    useSignInWithGithub(auth);
+
   const {
     register,
     handleSubmit,
@@ -22,20 +32,22 @@ const Register = () => {
     formState: { errors },
   } = useForm();
   useEffect(() => {
-    if (user) {
+    if (user || googleUser || GitUser) {
       toast("Register Successfull");
       navigate("/home");
     }
-  }, [navigate, user]);
-  if (error || updateError) {
+  }, [GitUser, googleUser, navigate, user]);
+  if (error || updateError || googleError || GitError) {
     return (
       <div>
-        <p>Error: {error.message || updateError.message}</p>
+        <p>
+          Error: {error.message || updateError.message || googleError.message}
+        </p>
       </div>
     );
   }
-  if (loading || updating) {
-    return <p>Loading...</p>;
+  if (loading || updating || googleLoading || GitLoading) {
+    return <Loading />;
   }
 
   const onSubmit = async (data) => {
@@ -49,11 +61,11 @@ const Register = () => {
       <form onSubmit={handleSubmit(onSubmit)} className="login-form">
         <h2 className="form-title">Sign In With</h2>
         <div className="form-social-flex">
-          <div className="social-facebook">
-            <GrFacebook className=" text-white text-2xl" />{" "}
-            <span className="facebook-title">Facebook</span>
+          <div onClick={() => signInWithGithub()} className="social-github">
+            <AiFillGithub className=" text-white text-2xl" />{" "}
+            <span className="github-title">Github</span>
           </div>
-          <div className="social-google">
+          <div onClick={() => signInWithGoogle()} className="social-google">
             <FcGoogle className="text-2xl" />{" "}
             <span className="google-title">Google</span>
           </div>
@@ -121,6 +133,12 @@ const Register = () => {
             value={"Register"}
           />
         </div>
+        <p className="text-lg mt-2">
+          Don't Have an Account.{" "}
+          <Link to={"/login"}>
+            <span className="text-secondary">Login Now</span>
+          </Link>
+        </p>
       </form>
     </div>
   );

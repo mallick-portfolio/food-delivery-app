@@ -1,13 +1,24 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import logo from "../../assets/logo.png";
 import { RiShoppingBasketLine } from "react-icons/ri";
 import { AiOutlineUser } from "react-icons/ai";
+import { FiLogIn } from "react-icons/fi";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-const Header = () => {
- 
-  const [show, setShow] = useState(true);
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init.js";
+import { signOut } from "firebase/auth";
+import Loading from "../Loading/Loading.jsx";
 
+const Header = () => {
+  const [user, loading, error] = useAuthState(auth);
+  const [show, setShow] = useState(true);
+  if (loading) {
+    return <Loading />;
+  }
+  if (error) {
+    console.log(error);
+  }
   return (
     <header className="header">
       <div className="header-container">
@@ -44,16 +55,18 @@ const Header = () => {
               <RiShoppingBasketLine className="right-navbar-item" />
               <span className="cart-item">0</span>
             </li>
-            <li>
-              <Link to={"/register"}>
-                <AiOutlineUser className="right-navbar-item" />
-              </Link>
-            </li>
-            <li>
-              <Link to={"/login"}>
-                <AiOutlineUser className="right-navbar-item" />
-              </Link>
-            </li>
+            {user ? (
+              <li>
+                <button onClick={() => signOut(auth)}>Logout</button>
+              </li>
+            ) : (
+              <li cl>
+                <Link to={"/login"}>
+                  <FiLogIn className="right-navbar-item" />
+                </Link>
+              </li>
+            )}
+
             <li className="block lg:hidden">
               <button onClick={() => setShow(!show)}>
                 {show ? (
