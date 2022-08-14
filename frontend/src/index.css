@@ -215,4 +215,41 @@ code {
   .filter-view {
     @apply text-2xl text-primary cursor-pointer;
   }
+  .login-container {
+    @apply h-full w-full sm:h-screen sm:w-screen flex flex-col justify-center items-center register;
+  }
+  .login-form {
+    @apply px-4 py-3 mx-4 sm:mx-0 sm:px-24 sm:py-6 bg-white rounded-lg;
+  }
+  .form-title {
+    @apply text-xl font-semibold text-primary md:text-2xl lg:text-4xl text-center;
+  }
+  .form-social-flex {
+    @apply flex flex-col sm:flex-row gap-4 justify-center items-center py-4;
+  }
+  .social-facebook {
+    @apply cursor-pointer w-full sm:w-auto px-4 sm:px-8 py-2 lg:py-4 bg-[#3b5998] rounded-md flex gap-2 items-center;
+  }
+  .social-google {
+    @apply cursor-pointer w-full sm:w-auto px-4 sm:px-8 py-2 lg:py-4 shadow-3xl rounded-md flex gap-2 items-center
+  }
+  .facebook-title {
+    @apply text-lg sm:text-xl font-semibold text-white
+  }
+  .google-title {
+    @apply text-lg sm:text-xl font-semibold text-[#555555]
+  }
+  .form-submit {
+    @apply w-full bg-primary border hover:border-primary hover:bg-white hover:text-primary transition-all duration-500 rounded-md  py-2 lg:py-3 text-white cursor-pointer text-lg sm:text-xl
+  }
+}
+
+
+@layer components {
+  .form-label {
+    @apply last:text-sm lg:text-lg font-semibold text-primary
+  }
+  .form-input {
+    @apply w-full shadow-3xl rounded-md h-10 lg:h-12 focus:outline-none focus:border-2 focus:border-primary pl-4
+  }
 }
