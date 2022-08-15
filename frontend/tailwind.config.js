@@ -17,6 +17,7 @@ module.exports = {
         primary: "#212245",
         secondary: "#df2020",
         natural: "#777",
+        imgColor: "rgba(12, 22, 54, 0.2)",
       },
       boxShadow: {
         "3xl": "0 1px 5px 0px rgb(0 0 0 / 20%)",

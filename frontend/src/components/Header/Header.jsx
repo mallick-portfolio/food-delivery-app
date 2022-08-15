@@ -1,7 +1,6 @@
 import React from "react";
 import logo from "../../assets/logo.png";
 import { RiShoppingBasketLine } from "react-icons/ri";
-import { AiOutlineUser } from "react-icons/ai";
 import { FiLogIn } from "react-icons/fi";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
