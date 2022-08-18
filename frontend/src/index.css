@@ -30,7 +30,7 @@ code {
   right: 0;
   top: 0;
   bottom: 0;
-  background: rgba(85, 85, 84, 0.6);
+  background: rgba(85, 85, 84, 0.3);
   z-index: 0;
 }
 .register {
@@ -168,7 +168,7 @@ code {
     @apply cursor-pointer mx-auto duration-500 p-4 scale-75 transition-all hover:scale-100;
   }
   .single-product-title {
-    @apply text-center text-sm md:text-base lg:text-lg font-semibold text-primary my-4;
+    @apply text-center text-sm md:text-base lg:text-lg font-semibold text-primary my-2;
   }
   .price-btn-flex {
     @apply flex flex-col sm:flex-row justify-between items-center gap-1 sm:gap-6;
