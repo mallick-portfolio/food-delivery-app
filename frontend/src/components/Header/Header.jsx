@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../../assets/logo.png";
 import { RiShoppingBasketLine } from "react-icons/ri";
+import { BsArrowRightCircleFill } from "react-icons/bs";
 import { FiLogIn } from "react-icons/fi";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
@@ -41,6 +42,9 @@ const Header = () => {
 
         {/* Mobile Menu */}
         <div className={`mobile-menu ${show ? "-left-64" : "left-0"}`}>
+          <div onClick={() => setShow(!show)} className="hideMenu">
+            <BsArrowRightCircleFill className="hideMenu-icon" />
+          </div>
           <ul className="mobile-ul">
             {menus.map((item, i) => (
               <li key={i} className="list-item">
@@ -52,22 +56,6 @@ const Header = () => {
 
         <div>
           <ul className="right-navbar">
-            <li className="relative">
-              <div
-                className="cursor-pointer"
-                onClick={() => setShowCart(!showCart)}
-              >
-                <RiShoppingBasketLine className="right-navbar-item" />
-                <span className="cart-item">0</span>
-              </div>
-              <div
-                className={`cart-items ${
-                  showCart ? " top-6 right-0" : "-top-96 right-0"
-                }`}
-              >
-                <Cart />
-              </div>
-            </li>
             {user ? (
               <li>
                 <button onClick={() => signOut(auth)}>Logout</button>
@@ -79,6 +67,33 @@ const Header = () => {
                 </Link>
               </li>
             )}
+            <li className="relative">
+              <div
+                className="cursor-pointer"
+                onClick={() => {
+                  setShowCart(!showCart);
+                  setShow(true);
+                }}
+              >
+                <RiShoppingBasketLine className="right-navbar-item" />
+                <span className="cart-item">0</span>
+              </div>
+              <div
+                className={`cart-items ${
+                  showCart ? " top-0 right-0" : "top-0 -right-[800px]"
+                }`}
+              >
+                <button
+                  className="hideCart-icon"
+                  onClick={() => {
+                    setShowCart(!showCart);
+                  }}
+                >
+                  <BsArrowRightCircleFill className="text-2xl text-secondary" />
+                </button>
+                <Cart />
+              </div>
+            </li>
 
             <li className="block lg:hidden">
               <button onClick={() => setShow(!show)}>
