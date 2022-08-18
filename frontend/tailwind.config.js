@@ -17,7 +17,7 @@ module.exports = {
         primary: "#212245",
         secondary: "#ff136f",
         natural: "#777",
-        imgColor: "rgba(12, 22, 54, 0.5)",
+        imgColor: "rgba(12, 22, 54, 0.3)",
         discountBg: "linear-gradient(#FBAD41, #980F00)",
       },
       boxShadow: {

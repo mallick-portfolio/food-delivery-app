@@ -53,6 +53,24 @@ code {
   .header-container {
     @apply container flex justify-between items-center;
   }
+  .cart-items {
+    @apply absolute rounded-md bg-white shadow-3xl py-8 px-4 w-96 transition-all duration-1000
+  }
+  .cart-flex {
+    @apply flex justify-between items-center gap-6
+  }
+  .cart-in-de {
+    @apply border border-primary px-2 cursor-pointer
+  }
+  .cart-input {
+    @apply focus:outline-none border border-primary w-6 pl-2
+  }
+  .cart-item-delete {
+    @apply px-2 py-1 rounded-md bg-secondary
+  }
+  .cart-item-icon {
+    @apply text-2xl cursor-pointer text-white
+  }
   .logo-area {
     @apply flex flex-col items-center;
   }

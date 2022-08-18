@@ -8,10 +8,12 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init.js";
 import { signOut } from "firebase/auth";
 import Loading from "../Loading/Loading.jsx";
+import Cart from "../Cart/Cart.jsx";
 
 const Header = () => {
   const [user, loading, error] = useAuthState(auth);
   const [show, setShow] = useState(true);
+  const [showCart, setShowCart] = useState(false);
   if (loading) {
     return <Loading />;
   }
@@ -51,8 +53,20 @@ const Header = () => {
         <div>
           <ul className="right-navbar">
             <li className="relative">
-              <RiShoppingBasketLine className="right-navbar-item" />
-              <span className="cart-item">0</span>
+              <div
+                className="cursor-pointer"
+                onClick={() => setShowCart(!showCart)}
+              >
+                <RiShoppingBasketLine className="right-navbar-item" />
+                <span className="cart-item">0</span>
+              </div>
+              <div
+                className={`cart-items ${
+                  showCart ? " top-6 right-0" : "-top-96 right-0"
+                }`}
+              >
+                <Cart />
+              </div>
             </li>
             {user ? (
               <li>

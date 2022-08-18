@@ -5,7 +5,7 @@ const AllFoods = () => {
   const [view, setView] = useState(true);
   const [search, setSearch] = useState("");
   return (
-    <div className="py-12">
+    <div className="pb-12">
       <FoodBanner />
       <FilterFood setSearch={setSearch} setView={setView} />
       <Foods search={search} />
