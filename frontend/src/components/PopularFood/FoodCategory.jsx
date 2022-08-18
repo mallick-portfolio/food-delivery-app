@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import allProducts from "../../assets/fakeData/products.js";
 import pic1 from "../../assets/pic1.png";
 import pic2 from "../../assets/pic2.png";
@@ -41,7 +42,7 @@ const FoodCategory = () => {
   return (
     <div className="container py-12">
       <h1 className="foods-title">Popular Foods</h1>
-      <div className="bg-[#df2020] py-2 sm:py-8 rounded-md">
+      <div className="bg-secondary py-2 sm:py-8 rounded-md">
         <ul className="food-category">
           {items.map((item) => (
             <li
@@ -61,10 +62,17 @@ const FoodCategory = () => {
         </ul>
       </div>
       <div className="foods-grid">
-        {products.map((product) => (
+        {products.slice(0, 12).map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
+      {products.length > 12 && (
+        <div className="text-center mt-4 sm:mt-6">
+          <button className="show-all-btn">
+            <Link to={"/all-foods"}>Show All</Link>
+          </button>
+        </div>
+      )}
     </div>
   );
 };

@@ -2,6 +2,7 @@ import React from "react";
 import {
   Banner,
   Category,
+  DiscountBanner,
   HotPizza,
   PopularFood,
   Serve,
@@ -19,6 +20,7 @@ const Home = () => {
       <Tasty />
       <HotPizza />
       <Testimonial />
+      <DiscountBanner />
     </div>
   );
 };
