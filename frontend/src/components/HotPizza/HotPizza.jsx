@@ -1,12 +1,17 @@
 import React from "react";
-import products from "../../assets/fakeData/products.js";
 import ProductCard from "../PopularFood/ProductCard.jsx";
 import { Autoplay, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { Swiper, SwiperSlide } from "swiper/react";
+import useProduct from "../../utilities/useProducts.js";
+import Loading from "../Loading/Loading.jsx";
 const HotPizza = () => {
+  const [products, isloading] = useProduct();
+  if (isloading) {
+    return <Loading />;
+  }
   return (
     <div className="container py-12 relative z-10">
       <h1 className="foods-title">Hot Pizza</h1>

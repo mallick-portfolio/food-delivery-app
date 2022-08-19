@@ -7,6 +7,7 @@ import pic3 from "../../assets/pic3.png";
 import useProduct from "../../utilities/useProducts.js";
 import Loading from "../Loading/Loading.jsx";
 import ProductCard from "./ProductCard.jsx";
+
 const FoodCategory = () => {
   const [allProducts, loading] = useProduct();
   const [active, setActive] = useState(1);
@@ -39,8 +40,8 @@ const FoodCategory = () => {
     }
   }, [allProducts, category]);
 
-  if(loading){
-    return <Loading />
+  if (loading) {
+    return <Loading />;
   }
   return (
     <div className="container py-12">

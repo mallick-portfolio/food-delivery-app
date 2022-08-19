@@ -6,7 +6,7 @@ export const fetchProductAsync = createAsyncThunk(
     const response = await fetch(`http://localhost:5000/products`);
     if (response.ok) {
       const products = await response.json();
-      return { products };
+      return products;
     }
   }
 );
@@ -23,8 +23,8 @@ const productSlice = createSlice({
       state.isloading = true;
     },
     [fetchProductAsync.fulfilled]: (state, action) => {
+      state.products = action.payload;
       state.isloading = false;
-      state.products.concat(action.payload);
     },
     [fetchProductAsync.rejected]: (state, action) => {
       state.isloading = false;
@@ -34,4 +34,4 @@ const productSlice = createSlice({
   },
 });
 
-export default productSlice.actions;
+export default productSlice.reducer;
