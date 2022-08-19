@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import allProducts from "../../assets/fakeData/products.js";
 import pic1 from "../../assets/pic1.png";
 import pic2 from "../../assets/pic2.png";
 import pic3 from "../../assets/pic3.png";
+import useProduct from "../../utilities/useProducts.js";
+import Loading from "../Loading/Loading.jsx";
 import ProductCard from "./ProductCard.jsx";
 const FoodCategory = () => {
+  const [allProducts, loading] = useProduct();
   const [active, setActive] = useState(1);
   const [products, setProducts] = useState(allProducts);
   const [category, setCategory] = useState("ALL");
@@ -15,14 +17,12 @@ const FoodCategory = () => {
     if (category === "ALL") {
       setProducts(allProducts);
     }
-
     if (category === "BURGER") {
       const filteredProducts = allProducts.filter(
         (item) => item.category === "Burger"
       );
       setProducts(filteredProducts);
     }
-
     if (category === "PIZZA") {
       const filteredProducts = allProducts.filter(
         (item) => item.category === "Pizza"
@@ -30,7 +30,6 @@ const FoodCategory = () => {
 
       setProducts(filteredProducts);
     }
-
     if (category === "BREAD") {
       const filteredProducts = allProducts.filter(
         (item) => item.category === "Bread"
@@ -38,7 +37,11 @@ const FoodCategory = () => {
 
       setProducts(filteredProducts);
     }
-  }, [category, products]);
+  }, [allProducts, category]);
+
+  if(loading){
+    return <Loading />
+  }
   return (
     <div className="container py-12">
       <h1 className="foods-title">Popular Foods</h1>
