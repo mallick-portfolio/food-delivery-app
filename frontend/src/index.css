@@ -54,7 +54,7 @@ code {
     @apply container flex justify-between items-center;
   }
   .cart-items {
-    @apply fixed py-8 z-50 h-screen rounded-md bg-white shadow-3xl px-4 w-96 transition-all duration-1000;
+    @apply fixed py-8 z-50 h-screen rounded-md bg-white shadow-3xl px-4 w-full md:w-96 transition-all duration-1000;
   }
   .cart-flex {
     @apply flex justify-between items-center gap-6;
@@ -99,7 +99,7 @@ code {
     @apply absolute -top-2 w-5 text-white h-5 text-center -right-2 bg-red-500 rounded-full;
   }
   .hideCart-icon {
-    @apply mb-4 rounded-full -ml-8 ring-secondary ring ring-offset-2
+    @apply mb-4 rounded-full ml-0 sm:-ml-8 ring-secondary ring ring-offset-2
   }
   .right-navbar-item {
     @apply font-bold text-2xl cursor-pointer;

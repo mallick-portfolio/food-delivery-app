@@ -10,11 +10,24 @@ import auth from "../../firebase.init.js";
 import { signOut } from "firebase/auth";
 import Loading from "../Loading/Loading.jsx";
 import Cart from "../Cart/Cart.jsx";
+import { useRef } from "react";
+import { useEffect } from "react";
 
 const Header = () => {
+  const headerRef = useRef();
   const [user, loading, error] = useAuthState(auth);
   const [show, setShow] = useState(true);
   const [showCart, setShowCart] = useState(false);
+
+  useEffect(() => {
+    document.addEventListener("mousedown", (e) => {
+      if (!headerRef.current.contains(e.target)) {
+        setShow(true);
+        setShowCart(false);
+      }
+    });
+  }, []);
+
   if (loading) {
     return <Loading />;
   }
@@ -22,7 +35,7 @@ const Header = () => {
     console.log(error);
   }
   return (
-    <header className="header">
+    <header ref={headerRef} className="header">
       <div className="header-container">
         <div className="logo-area">
           <img className="w-12" src={logo} alt="" />
