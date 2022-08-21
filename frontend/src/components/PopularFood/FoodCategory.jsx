@@ -46,7 +46,7 @@ const FoodCategory = () => {
   return (
     <div className="container py-12">
       <h1 className="foods-title">Popular Foods</h1>
-      <div className="bg-secondary py-2 sm:py-8 rounded-md">
+      <div className="food-category-list">
         <ul className="food-category">
           {items.map((item) => (
             <li
@@ -56,7 +56,7 @@ const FoodCategory = () => {
               }}
               key={item.id}
               className={`${
-                active === item.id ? "bg-white text-secondary" : "text-white"
+                active === item.id ? "bg-primary text-white" : "text-white"
               } category-item`}
             >
               {item.image && <img className="w-6" src={item.image} alt="" />}
