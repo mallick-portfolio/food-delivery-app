@@ -55,8 +55,8 @@ const HotPizza = () => {
           className="mySwiper relative"
         >
           {products
-            .filter((cat) => cat.category === "Pizza")
-            .map((product) => (
+            ?.filter((cat) => cat.category === "Pizza")
+            ?.map((product) => (
               <SwiperSlide key={product.id}>
                 <ProductCard product={product} />
               </SwiperSlide>

@@ -1,18 +1,13 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+
+import { useGetProductsQuery } from "../redux/api/productApi.js";
 const useProduct = () => {
-  const [loading, setLoading] = useState(false);
+  const { data, isLoading: loading, isError } = useGetProductsQuery();
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    setLoading(true);
-    const loadProduct = async () => {
-      const res = await axios.get("http://localhost:5000/products");
-      setProducts(res.data);
-      setLoading(false);
-    };
-    loadProduct();
-  }, []);
-  return [products, loading];
+    setProducts(data);
+  }, [data]);
+  return [products, loading, isError];
 };
 
 export default useProduct;

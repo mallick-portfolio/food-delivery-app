@@ -66,11 +66,11 @@ const FoodCategory = () => {
         </ul>
       </div>
       <div className="foods-grid">
-        {products.slice(0, 12).map((product) => (
+        {products?.slice(0, 12)?.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
-      {products.length > 12 && (
+      {products?.length > 12 && (
         <div className="text-center mt-4 sm:mt-6">
           <button className="show-all-btn">
             <Link to={"/all-foods"}>Show All</Link>

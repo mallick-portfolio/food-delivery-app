@@ -160,10 +160,6 @@ const menus = [
     path: "/all-foods",
   },
   {
-    display: "Cart",
-    path: "/cart",
-  },
-  {
     display: "Contact",
     path: "/contact",
   },
