@@ -8,7 +8,7 @@ import {
 import auth from "../../firebase.init.js";
 import { useAddToCartMutation } from "../../redux/api/cartApi.js";
 import StarRatting from "../StarRatting/StarRatting.jsx";
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, setItem }) => {
   const [addCart] = useAddToCartMutation();
   const [user, loading] = useAuthState(auth);
   if (loading) {
@@ -29,7 +29,7 @@ const ProductCard = ({ product }) => {
             <AiOutlineShoppingCart />
           </div>
           <div className="product-hover-icon">
-            <AiOutlineEye />
+            <AiOutlineEye onClick={() => setItem(product)} />
           </div>
           <div className="product-hover-icon">
             <AiOutlineHeart />

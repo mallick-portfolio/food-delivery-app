@@ -6,9 +6,11 @@ import pic2 from "../../assets/pic2.png";
 import pic3 from "../../assets/pic3.png";
 import useProduct from "../../utilities/useProducts.js";
 import Loading from "../Loading/Loading.jsx";
+import FoodModal from "../Modal/FoodModal.jsx";
 import ProductCard from "./ProductCard.jsx";
 
 const FoodCategory = () => {
+  const [item, setItem] = useState(null);
   const [allProducts, loading] = useProduct();
   const [active, setActive] = useState(1);
   const [products, setProducts] = useState(allProducts);
@@ -44,40 +46,43 @@ const FoodCategory = () => {
     return <Loading />;
   }
   return (
-    <div className="container py-12">
-      <h1 className="foods-title">Popular Foods</h1>
-      <div className="food-category-list">
-        <ul className="food-category">
-          {items.map((item) => (
-            <li
-              onClick={() => {
-                setActive(item.id);
-                setCategory(item.category);
-              }}
-              key={item.id}
-              className={`${
-                active === item.id ? "bg-primary text-white" : "text-white"
-              } category-item`}
-            >
-              {item.image && <img className="w-6" src={item.image} alt="" />}
-              <span>{item.title}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="foods-grid">
-        {products?.slice(0, 12)?.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
-      {products?.length > 12 && (
-        <div className="text-center mt-4 sm:mt-6">
-          <button className="show-all-btn">
-            <Link to={"/all-foods"}>Show All</Link>
-          </button>
+    <>
+      <div className="container py-12">
+        <h1 className="foods-title">Popular Foods</h1>
+        <div className="food-category-list">
+          <ul className="food-category">
+            {items.map((item) => (
+              <li
+                onClick={() => {
+                  setActive(item.id);
+                  setCategory(item.category);
+                }}
+                key={item.id}
+                className={`${
+                  active === item.id ? "bg-primary text-white" : "text-white"
+                } category-item`}
+              >
+                {item.image && <img className="w-6" src={item.image} alt="" />}
+                <span>{item.title}</span>
+              </li>
+            ))}
+          </ul>
         </div>
-      )}
-    </div>
+        <div className="foods-grid">
+          {products?.slice(0, 12)?.map((product) => (
+            <ProductCard key={product.id} product={product} setItem={setItem} />
+          ))}
+        </div>
+        {products?.length > 12 && (
+          <div className="text-center mt-4 sm:mt-6">
+            <button className="show-all-btn">
+              <Link to={"/all-foods"}>Show All</Link>
+            </button>
+          </div>
+        )}
+      </div>
+      {item && <FoodModal item={item} setItem={setItem} />}
+    </>
   );
 };
 
