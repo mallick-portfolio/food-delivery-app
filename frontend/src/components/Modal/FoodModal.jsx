@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import StarRatting from "../StarRatting/StarRatting.jsx";
 const FoodModal = ({ item, setItem }) => {
   console.log(item);
   useEffect(() => {
@@ -27,11 +26,11 @@ const FoodModal = ({ item, setItem }) => {
                 <span className="text-secondary">${item?.price}</span>
               </h2>
               <h2 className="text-primary font-semibold text-lg">
-                Price ----------->
+                Price -----------
                 <span className="text-secondary">${item?.price}</span>
               </h2>
               <h2 className="text-primary font-semibold text-lg">
-                Category ------->
+                Category -------
                 <span className="text-secondary">{item?.category}</span>
               </h2>
 
