@@ -1,11 +1,25 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import {
   AiOutlineShoppingCart,
   AiOutlineEye,
   AiOutlineHeart,
 } from "react-icons/ai";
+import auth from "../../firebase.init.js";
+import { useAddToCartMutation } from "../../redux/api/cartApi.js";
 import StarRatting from "../StarRatting/StarRatting.jsx";
 const ProductCard = ({ product }) => {
+  const [addCart] = useAddToCartMutation();
+  const [user, loading] = useAuthState(auth);
+  if (loading) {
+    return "";
+  }
+  const addToCartHandler = async (product) => {
+    if (user?.email) {
+      console.log(product);
+    }
+  };
+
   return (
     <div className="foods-product-item">
       <div className="product-img-div group">
@@ -27,7 +41,12 @@ const ProductCard = ({ product }) => {
         <StarRatting rating={product?.avgRatting} />
         <div className="price-btn-flex">
           <p className="card-price">${product?.price}</p>
-          <button className="add-to-cart-btn">Add to Cart</button>
+          <button
+            onClick={() => addToCartHandler(product)}
+            className="add-to-cart-btn"
+          >
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>
