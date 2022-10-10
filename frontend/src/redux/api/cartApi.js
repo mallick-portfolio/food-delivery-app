@@ -3,14 +3,16 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const cartApi = createApi({
   reducerPath: "cartApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/" }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: "https://food-delivery-backend-mallick-portfolio.vercel.app/",
+  }),
   tagTypes: ["Carts"],
   endpoints: (build) => ({
     addToCart: build.mutation({
       query(body) {
         console.log("i am log from addTOcart", body);
         return {
-          url: `cart/${body.email}`,
+          url: `cart`,
           method: "POST",
           body,
         };

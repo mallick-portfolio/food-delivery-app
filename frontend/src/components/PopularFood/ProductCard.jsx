@@ -7,16 +7,19 @@ import {
 } from "react-icons/ai";
 import auth from "../../firebase.init.js";
 import { useAddToCartMutation } from "../../redux/api/cartApi.js";
+import Loading from "../Loading/Loading.jsx";
 import StarRatting from "../StarRatting/StarRatting.jsx";
 const ProductCard = ({ product, setItem }) => {
   const [addCart] = useAddToCartMutation();
   const [user, loading] = useAuthState(auth);
   if (loading) {
-    return "";
+    return <Loading />;
   }
   const addToCartHandler = async (product) => {
+    console.log(product, user);
+    console.log("hello world");
     if (user?.email) {
-      console.log(product);
+      addCart(product);
     }
   };
 

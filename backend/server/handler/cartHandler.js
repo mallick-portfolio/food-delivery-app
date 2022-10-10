@@ -4,11 +4,8 @@ const mongoose = require("mongoose");
 const cartSchema = require("../schema/cartSchema.js");
 const Cart = mongoose.model("Cart", cartSchema);
 
-route.post("/:email", async (req, res) => {
-  res.status(200).json({
-    data: req.body,
-    message: "done",
-  });
+route.post("/", async (req, res) => {
+  res.send(req.body);
 });
 
 module.exports = route;
