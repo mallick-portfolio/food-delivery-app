@@ -9,18 +9,24 @@ import auth from "../../firebase.init.js";
 import { useAddToCartMutation } from "../../redux/api/cartApi.js";
 import Loading from "../Loading/Loading.jsx";
 import StarRatting from "../StarRatting/StarRatting.jsx";
+import { useNavigate } from "react-router-dom";
 const ProductCard = ({ product, setItem }) => {
-  const [addCart] = useAddToCartMutation();
+  const navigate = useNavigate();
+  const [addCart, res] = useAddToCartMutation();
   const [user, loading] = useAuthState(auth);
   if (loading) {
     return <Loading />;
   }
   const addToCartHandler = async (product) => {
-    console.log(product, user);
-    console.log("hello world");
-    if (user?.email) {
-      addCart(product);
+    if (!user?.email) {
+      navigate("/login");
+      return;
     }
+    const result = await addCart({
+      ...product,
+      email: user?.email,
+    });
+    console.log(result);
   };
 
   return (

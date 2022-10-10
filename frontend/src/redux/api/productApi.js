@@ -3,11 +3,16 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const productApi = createApi({
   reducerPath: "productApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://food-delivery-backend-mallick-portfolio.vercel.app/",
+    baseUrl: "http://localhost:5000/",
   }),
   endpoints: (builder) => ({
     getProducts: builder.query({
-      query: () => `products`,
+      query: () => {
+        return {
+          url: `products`,
+          method: "GET",
+        };
+      },
     }),
   }),
 });
